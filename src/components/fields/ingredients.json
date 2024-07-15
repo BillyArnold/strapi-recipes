@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_fields_ingredients",
+  "info": {
+    "displayName": "Ingredients",
+    "icon": "feather"
+  },
+  "options": {},
+  "attributes": {
+    "ingredient": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::ingredient.ingredient"
+    },
+    "Amount": {
+      "type": "decimal"
+    }
+  }
+}
