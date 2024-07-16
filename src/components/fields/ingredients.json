@@ -2,7 +2,8 @@
   "collectionName": "components_fields_ingredients",
   "info": {
     "displayName": "Ingredients",
-    "icon": "feather"
+    "icon": "feather",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -13,6 +14,17 @@
     },
     "Amount": {
       "type": "decimal"
+    },
+    "Unit": {
+      "type": "enumeration",
+      "enum": [
+        "g",
+        "tsp",
+        "tbsp",
+        "items",
+        "ml",
+        "litres"
+      ]
     }
   }
 }

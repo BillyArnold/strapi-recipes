@@ -5,6 +5,7 @@ export interface FieldsIngredients extends Schema.Component {
   info: {
     displayName: 'Ingredients';
     icon: 'feather';
+    description: '';
   };
   attributes: {
     ingredient: Attribute.Relation<
@@ -13,6 +14,7 @@ export interface FieldsIngredients extends Schema.Component {
       'api::ingredient.ingredient'
     >;
     Amount: Attribute.Decimal;
+    Unit: Attribute.Enumeration<['g', 'tsp', 'tbsp', 'items', 'ml', 'litres']>;
   };
 }
 
