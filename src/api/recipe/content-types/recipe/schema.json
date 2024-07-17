@@ -24,12 +24,6 @@
     "slug": {
       "type": "uid"
     },
-    "categories": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::category.category",
-      "mappedBy": "recipe"
-    },
     "Ingredients": {
       "displayName": "Ingredients",
       "type": "component",
@@ -45,6 +39,12 @@
       ],
       "type": "media",
       "multiple": false
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "mappedBy": "recipes"
     }
   }
 }

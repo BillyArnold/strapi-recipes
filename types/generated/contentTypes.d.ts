@@ -794,15 +794,16 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
     singularName: 'category';
     pluralName: 'categories';
     displayName: 'Category';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     Name: Attribute.String;
-    recipe: Attribute.Relation<
+    recipes: Attribute.Relation<
       'api::category.category',
-      'manyToOne',
+      'manyToMany',
       'api::recipe.recipe'
     >;
     createdAt: Attribute.DateTime;
@@ -869,13 +870,13 @@ export interface ApiRecipeRecipe extends Schema.CollectionType {
     Excerpt: Attribute.String;
     Method: Attribute.Blocks;
     slug: Attribute.UID;
-    categories: Attribute.Relation<
-      'api::recipe.recipe',
-      'oneToMany',
-      'api::category.category'
-    >;
     Ingredients: Attribute.Component<'fields.ingredients', true>;
     FeaturedImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    categories: Attribute.Relation<
+      'api::recipe.recipe',
+      'manyToMany',
+      'api::category.category'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
